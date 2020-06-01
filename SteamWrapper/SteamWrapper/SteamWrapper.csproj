@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{287A0F7F-747E-43C4-B619-D4B8DCCA440A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SteamWrapper</RootNamespace>
+    <AssemblyName>SteamWrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>SteamWrapper.ico</ApplicationIcon>
+    <StartupObject>ScriptKidAntiCheat.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gma.System.MouseKeyHook" />
+    <Reference Include="Google.Apis" />
+    <Reference Include="Google.Apis.Auth" />
+    <Reference Include="Google.Apis.Core" />
+    <Reference Include="Google.Apis.Drive.v3" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SharpDX.Mathematics" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="KeyCode.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="ProcessedByFody.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScriptKidAntiCheat\Classes\FakeCheat.cs" />
+    <Compile Include="ScriptKidAntiCheat\Classes\Map.cs" />
+    <Compile Include="ScriptKidAntiCheat\Data\GameData.cs" />
+    <Compile Include="ScriptKidAntiCheat\Data\GameProcess.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_cache.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_dust2.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_inferno.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_mirage.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_nuke.cs" />
+    <Compile Include="ScriptKidAntiCheat\de_overpass.cs" />
+    <Compile Include="ScriptKidAntiCheat\FakeCheatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\FakeCheatForm.Designer.cs">
+      <DependentUpon>FakeCheatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\Forms\Conditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\Forms\Conditions.Designer.cs">
+      <DependentUpon>Conditions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\Forms\Hidden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\Forms\Hidden.Designer.cs">
+      <DependentUpon>Hidden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\GameConsole.cs" />
+    <Compile Include="ScriptKidAntiCheat\GoogleDriveUploader.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Entity.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\EntityBase.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\MatchInfo.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Player.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\GlobalVars.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\matrix3x4_t.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\mstudiobbox_t.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\mstudiobone_t.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\mstudiohitboxset_t.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\RoundResults.cs" />
+    <Compile Include="ScriptKidAntiCheat\Internal\Raw\studiohdr_t.cs" />
+    <Compile Include="ScriptKidAntiCheat\Module.cs" />
+    <Compile Include="ScriptKidAntiCheat\Program.cs" />
+    <Compile Include="ScriptKidAntiCheat\Properties\Resources.cs" />
+    <Compile Include="ScriptKidAntiCheat\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ScriptKidAntiCheat\Punishments\BigSpender.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\BurningMan.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\ButterFingers.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\DoYouEvenAimBro.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\FlashInYourFace.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\InvertMouseAds.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\KnockKnockWhosThere.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\NoCrosshairChallenge.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\NoPlantOrDefuse.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\NoSilentWalk.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\NoSpray4U.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\Punishment.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\ReverseSpeedhack.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\ViolenceSpeedMomentum.cs" />
+    <Compile Include="ScriptKidAntiCheat\Punishments\Yeeeeeeeet.cs" />
+    <Compile Include="ScriptKidAntiCheat\ReplayLogger.cs" />
+    <Compile Include="ScriptKidAntiCheat\ReplayMonitor.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Analytics.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Debug.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Helper.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Maps.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Maths\GfxMath.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Maths\Line3D.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\MemoryRead.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\MouseHook.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Offsets.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\SendInput.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Team.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\TripWire.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\U_ThreadedComponent.cs" />
+    <Compile Include="ScriptKidAntiCheat\Utils\Weapons.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\HardwareInput.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\Input.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\KeybdInput.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\KeyboardEventFlags.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\MouseEventFlags.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\MouseInput.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\Point.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\Rect.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\SendInputEventType.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Data\WindowsVirtualKey.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\Kernel32.cs" />
+    <Compile Include="ScriptKidAntiCheat\Win32\User32.cs" />
+    <Compile Include="System\Runtime\CompilerServices\IsUnmanagedAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Costura\axinterop\wmplib\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\gma\system\mousekeyhook\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\auth\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\auth\pdb.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\auth\platformservices\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\core\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\core\pdb.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\drive\v3\dll.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\drive\v3\pdb.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\pdb.compressed" />
+    <EmbeddedResource Include="Costura\google\apis\platformservices\dll.compressed" />
+    <EmbeddedResource Include="Costura\newtonsoft\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\sharpdx\dll.compressed" />
+    <EmbeddedResource Include="Costura\sharpdx\mathematics\dll.compressed" />
+    <EmbeddedResource Include="Costura\sharpdx\mathematics\pdb.compressed" />
+    <EmbeddedResource Include="Costura\sharpdx\pdb.compressed" />
+    <EmbeddedResource Include="ScriptKidAntiCheat\FakeCheatForm.resources" />
+    <EmbeddedResource Include="ScriptKidAntiCheat\Forms\Conditions.resources" />
+    <EmbeddedResource Include="ScriptKidAntiCheat\Forms\Hidden.resources" />
+    <EmbeddedResource Include="ScriptKidAntiCheat\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ScriptKidAntiCheat\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
